@@ -128,14 +128,14 @@ const HeroSection = () => {
           >
             <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/20">
               {/* WhatsApp-style chat mockup */}
-              <div className="bg-[#0E3C4E] rounded-2xl p-4 space-y-4 max-h-[600px] overflow-hidden">
-                <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+              <div className="bg-[#F7F4EA] rounded-2xl p-4 space-y-4 max-h-[600px] overflow-hidden">
+                <div className="flex items-center gap-3 pb-4 border-b border-[#2A2D34]/10">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FF6F3C] to-[#E8B77D] flex items-center justify-center text-white font-bold text-lg">
                     QI
                   </div>
                   <div>
-                    <div className="text-white font-semibold">Qasa IA</div>
-                    <div className="text-[#E8B77D] text-xs">Online agora</div>
+                    <div className="text-[#0E3C4E] font-semibold">Qasa IA</div>
+                    <div className="text-[#FF6F3C] text-xs">Online agora</div>
                   </div>
                 </div>
 
@@ -234,7 +234,7 @@ const AnimatedMessage = ({ children, delay, isUser = false }: { children: React.
         className={`max-w-[80%] px-4 py-3 rounded-2xl ${
           isUser
             ? 'bg-[#FF6F3C] text-white rounded-br-sm'
-            : 'bg-white/10 text-white rounded-bl-sm backdrop-blur-sm'
+            : 'bg-white text-[#2A2D34] rounded-bl-sm shadow-md border border-[#E8B77D]/30'
         }`}
         dangerouslySetInnerHTML={{ __html: String(children) }}
       />
