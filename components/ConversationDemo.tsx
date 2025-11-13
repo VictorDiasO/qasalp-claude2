@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import IPhoneMockup from './IPhoneMockup';
 
 interface Message {
   text: string;
@@ -69,11 +70,10 @@ const ConversationDemo = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            {/* Phone mockup */}
-            <div className="bg-[#0E3C4E] rounded-3xl shadow-2xl overflow-hidden border-8 border-[#2A2D34]">
-              {/* Phone header */}
+            <IPhoneMockup>
+              {/* Chat header */}
               <div className="bg-gradient-to-r from-[#0E3C4E] to-[#FF6F3C]/20 px-6 py-4 flex items-center gap-4">
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
@@ -96,7 +96,7 @@ const ConversationDemo = () => {
               </div>
 
               {/* Chat area */}
-              <div className="bg-gradient-to-b from-[#0E3C4E] to-[#0a2a36] p-6 min-h-[500px] space-y-4">
+              <div className="bg-gradient-to-b from-[#0E3C4E] to-[#0a2a36] p-6 flex-1 space-y-4 overflow-y-auto">
                 {messages.map((message, index) => (
                   <motion.div
                     key={index}
@@ -152,7 +152,7 @@ const ConversationDemo = () => {
                   </motion.div>
                 )}
               </div>
-            </div>
+            </IPhoneMockup>
 
             {/* Floating stats */}
             <motion.div

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import IPhoneMockup from './IPhoneMockup';
 
 const HeroSection = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -124,11 +125,11 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/20">
+            <IPhoneMockup>
               {/* WhatsApp-style chat mockup */}
-              <div className="bg-[#F7F4EA] rounded-2xl p-4 space-y-4 max-h-[600px] overflow-hidden">
+              <div className="bg-[#F7F4EA] h-full p-4 space-y-4 overflow-y-auto">
                 <div className="flex items-center gap-3 pb-4 border-b border-[#2A2D34]/10">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FF6F3C] to-[#E8B77D] flex items-center justify-center text-white font-bold text-lg">
                     QI
@@ -166,17 +167,17 @@ const HeroSection = () => {
                   Excelente escolha! É um imóvel incrível. Quer agendar uma visita? Tenho horários disponíveis amanhã às 14h ou 16h 😊
                 </AnimatedMessage>
               </div>
+            </IPhoneMockup>
 
-              {/* Floating badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: 7, duration: 0.5 }}
-                className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white px-6 py-3 rounded-full font-bold shadow-xl"
-              >
-                Lead Qualificado em 2min 34s ⚡
-              </motion.div>
-            </div>
+            {/* Floating badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: 7, duration: 0.5 }}
+              className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white px-6 py-3 rounded-full font-bold shadow-xl"
+            >
+              Lead Qualificado em 2min 34s ⚡
+            </motion.div>
           </motion.div>
         </div>
       </div>
