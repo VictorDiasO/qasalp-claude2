@@ -11,23 +11,23 @@ interface Integration {
 const IntegrationsSection = () => {
   const integrations: Integration[] = [
     {
-      name: 'WhatsApp Business',
+      name: 'WhatsApp',
       icon: '💬',
       description: 'Integração oficial com API do WhatsApp',
     },
     {
-      name: 'N8N',
-      icon: '🔗',
+      name: 'Kenlo',
+      icon: '⚙️',
       description: 'Automação de workflows e integrações',
     },
     {
-      name: 'Supabase',
-      icon: '🗄️',
+      name: 'Kommo',
+      icon: '💾',
       description: 'Banco de dados e armazenamento',
     },
     {
-      name: 'OpenAI',
-      icon: '🤖',
+      name: 'Jetimob',
+      icon: '🧠',
       description: 'IA avançada e processamento de linguagem',
     },
     {
@@ -37,7 +37,7 @@ const IntegrationsSection = () => {
     },
     {
       name: 'ZAP Imóveis',
-      icon: '📱',
+      icon: '🎯',
       description: 'Captura automática de leads',
     },
     {
@@ -46,8 +46,8 @@ const IntegrationsSection = () => {
       description: 'Integração com portal de classificados',
     },
     {
-      name: 'CRMs',
-      icon: '📊',
+      name: 'Chaves na Mão',
+      icon: '🔑',
       description: 'Integração com principais CRMs do mercado',
     },
   ];

@@ -50,7 +50,7 @@ const Step = ({ number, icon, title, description, delay }: StepProps) => {
           initial={{ height: 0 }}
           animate={isInView ? { height: '100%' } : {}}
           transition={{ duration: 0.8, delay: delay + 0.3 }}
-          className="hidden md:block absolute left-10 top-20 w-0.5 h-full bg-gradient-to-b from-[#FF6F3C] to-[#E8B77D] -z-10"
+          className="md:block absolute left-10 top-20 w-0.5 h-full bg-gradient-to-b from-[#FF6F3C] to-[#E8B77D] -z-10"
           style={{ height: '4rem' }}
         />
       )}
