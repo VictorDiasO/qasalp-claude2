@@ -128,9 +128,9 @@ const HeroSection = () => {
             className="relative flex justify-center"
           >
             <IPhoneMockup>
-              {/* WhatsApp-style chat mockup */}
-              <div className="bg-[#F7F4EA] h-full p-4 space-y-4 overflow-y-auto">
-                <div className="flex items-center gap-3 pb-4 border-b border-[#2A2D34]/10">
+              {/* Fixed Header */}
+              <div className="sticky top-0 z-10 bg-[#F7F4EA] px-4 pt-4 pb-4 border-b border-[#2A2D34]/10">
+                <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FF6F3C] to-[#E8B77D] flex items-center justify-center text-white font-bold text-lg">
                     QI
                   </div>
@@ -139,7 +139,10 @@ const HeroSection = () => {
                     <div className="text-[#FF6F3C] text-xs">Online agora</div>
                   </div>
                 </div>
+              </div>
 
+              {/* Scrollable chat messages */}
+              <div className="flex-1 overflow-y-auto bg-[#F7F4EA] p-4 space-y-4">
                 <AnimatedMessage delay={1} isUser>
                   Oi, vi um apê de 2 quartos no site
                 </AnimatedMessage>

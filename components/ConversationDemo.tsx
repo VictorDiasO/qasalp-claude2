@@ -73,8 +73,8 @@ const ConversationDemo = () => {
             className="relative flex justify-center"
           >
             <IPhoneMockup>
-              {/* Chat header */}
-              <div className="bg-gradient-to-r from-[#0E3C4E] to-[#FF6F3C]/20 px-6 py-4 flex items-center gap-4">
+              {/* Fixed header */}
+              <div className="sticky top-0 z-10 bg-gradient-to-r from-[#0E3C4E] to-[#FF6F3C]/20 px-6 py-4 flex items-center gap-4">
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -95,7 +95,7 @@ const ConversationDemo = () => {
                 </div>
               </div>
 
-              {/* Chat area */}
+              {/* Scrollable chat area */}
               <div className="bg-gradient-to-b from-[#0E3C4E] to-[#0a2a36] p-6 flex-1 space-y-4 overflow-y-auto">
                 {messages.map((message, index) => (
                   <motion.div

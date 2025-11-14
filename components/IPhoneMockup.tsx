@@ -16,7 +16,7 @@ const IPhoneMockup = ({ children, className = '' }: IPhoneMockupProps) => {
         {/* Outer bezel with shadow */}
         <div className="relative bg-[#1c1c1e] rounded-[3rem] p-3 shadow-2xl">
           {/* Inner frame */}
-          <div className="relative bg-black rounded-[2.5rem] overflow-hidden">
+          <div className="relative bg-black bg-gradient-to-br from-[#FF6F3C] to-[#E8B77D] top-0 rounded-[2.5rem] overflow-hidden">
             {/* Dynamic Island / Notch */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-50">
               <div className="bg-black rounded-b-3xl px-8 pt-2 pb-6 shadow-lg">
@@ -57,8 +57,10 @@ const IPhoneMockup = ({ children, className = '' }: IPhoneMockupProps) => {
             </div>
 
             {/* Screen content */}
-            <div className="relative overflow-hidden" style={{ height: '667px' }}>
-              <div className="h-full flex flex-col pt-12">
+            <div className="relative overflow-hidden bg-transparent" style={{ height: '667px' }}>
+              <div className="h-full flex flex-col">
+                {/* Spacer for status bar */}
+                <div className="h-10" />
                 {children}
               </div>
             </div>
