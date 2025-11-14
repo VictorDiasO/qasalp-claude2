@@ -16,17 +16,19 @@ const StatCard = ({ icon, value, suffix = '', label, delay }: StatCardProps) => 
   const isInView = useInView(ref, { once: true });
   const [count, setCount] = useState(0);
   const targetValue = parseInt(value);
+  const isNegative = targetValue < 0;
+  const absTargetValue = Math.abs(targetValue);
 
   useEffect(() => {
     if (isInView) {
       let startValue = 0;
       const duration = 2000; // 2 seconds
-      const increment = targetValue / (duration / 16); // 60fps
+      const increment = absTargetValue / (duration / 16); // 60fps
 
       const timer = setInterval(() => {
         startValue += increment;
-        if (startValue >= targetValue) {
-          setCount(targetValue);
+        if (startValue >= absTargetValue) {
+          setCount(absTargetValue);
           clearInterval(timer);
         } else {
           setCount(Math.floor(startValue));
@@ -35,7 +37,14 @@ const StatCard = ({ icon, value, suffix = '', label, delay }: StatCardProps) => 
 
       return () => clearInterval(timer);
     }
-  }, [isInView, targetValue]);
+  }, [isInView, absTargetValue]);
+
+  // Determine the sign prefix to display
+  const hasSignPrefix = value.startsWith('+') || value.startsWith('-');
+  const signPrefix = value.startsWith('+') ? '+' : value.startsWith('-') ? '-' : '';
+  // If value already has a sign prefix, use it and display absolute count
+  // Otherwise, determine sign from the parsed value
+  const displayCount = hasSignPrefix ? count : (isNegative ? -count : count);
 
   return (
     <motion.div
@@ -57,8 +66,8 @@ const StatCard = ({ icon, value, suffix = '', label, delay }: StatCardProps) => 
       <div className="relative z-10">
         <div className="text-5xl mb-4">{icon}</div>
         <div className="text-4xl lg:text-5xl font-bold text-[#0E3C4E] mb-2">
-          {value.startsWith('+') || value.startsWith('-') ? value.charAt(0) : ''}
-          {count}{suffix}
+          {signPrefix}
+          {displayCount}{suffix}
         </div>
         <div className="text-lg text-[#2A2D34]/70 font-medium">{label}</div>
       </div>
