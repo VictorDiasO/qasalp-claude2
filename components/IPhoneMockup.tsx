@@ -6,9 +6,11 @@ import { ReactNode } from 'react';
 interface IPhoneMockupProps {
   children: ReactNode;
   className?: string;
+  innerFrameBg?: string;
+  statusBarColor?: string;
 }
 
-const IPhoneMockup = ({ children, className = '' }: IPhoneMockupProps) => {
+const IPhoneMockup = ({ children, className = '', innerFrameBg = 'bg-transparent', statusBarColor = 'text-white' }: IPhoneMockupProps) => {
   return (
     <div className={`relative ${className}`}>
       {/* iPhone Frame */}
@@ -16,7 +18,7 @@ const IPhoneMockup = ({ children, className = '' }: IPhoneMockupProps) => {
         {/* Outer bezel with shadow */}
         <div className="relative bg-[#1c1c1e] rounded-[3rem] p-3 shadow-2xl">
           {/* Inner frame */}
-          <div className="relative bg-black bg-gradient-to-br from-[#FF6F3C] to-[#E8B77D] top-0 rounded-[2.5rem] overflow-hidden">
+          <div className={`relative ${innerFrameBg} top-0 rounded-[2.5rem] overflow-hidden`}>
             {/* Dynamic Island / Notch */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-50">
               <div className="bg-black rounded-b-3xl px-8 pt-2 pb-6 shadow-lg">

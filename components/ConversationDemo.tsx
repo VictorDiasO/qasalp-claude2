@@ -72,7 +72,7 @@ const ConversationDemo = () => {
             transition={{ duration: 0.6 }}
             className="relative flex justify-center"
           >
-            <IPhoneMockup>
+            <IPhoneMockup innerFrameBg="bg-gradient-to-r from-[#0E3C4E] to-[#FF6F3C]/20">
               {/* Fixed header */}
               <div className="sticky top-0 z-10 bg-gradient-to-r from-[#0E3C4E] to-[#FF6F3C]/20 px-6 py-4 flex items-center gap-4">
                 <motion.div

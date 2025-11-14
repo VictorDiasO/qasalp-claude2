@@ -127,7 +127,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative flex justify-center"
           >
-            <IPhoneMockup>
+            <IPhoneMockup innerFrameBg="bg-[#F7F4EA]" statusBarColor="text-black">
               {/* Fixed Header */}
               <div className="sticky top-0 z-10 bg-[#F7F4EA] px-4 pt-4 pb-4 border-b border-[#2A2D34]/10">
                 <div className="flex items-center gap-3">
