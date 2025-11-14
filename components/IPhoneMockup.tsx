@@ -27,7 +27,7 @@ const IPhoneMockup = ({ children, className = '', innerFrameBg = 'bg-transparent
           <div className={`relative ${innerFrameBg} top-0 rounded-[2.5rem] overflow-hidden`}>
             {/* Dynamic Island / Notch */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 z-50">
-              <div className="bg-black rounded-b-3xl px-8 pt-2 pb-6 shadow-lg">
+              <div className="bg-black rounded-b-3xl px-8 pt-2 pb-2 shadow-lg">
                 <div className="w-24 h-6 bg-black rounded-full flex items-center justify-center gap-3">
                   {/* Camera */}
                   <div className="w-2.5 h-2.5 rounded-full bg-[#1a1a2e] border border-[#2d2d3a]" />
