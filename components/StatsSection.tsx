@@ -57,7 +57,7 @@ const StatCard = ({ icon, value, suffix = '', label, delay }: StatCardProps) => 
       <div className="relative z-10">
         <div className="text-5xl mb-4">{icon}</div>
         <div className="text-4xl lg:text-5xl font-bold text-[#0E3C4E] mb-2">
-          {value.startsWith('+') || value.startsWith('-') ? value.charAt(0) : ''}
+          {/* {value.startsWith('+') || value.startsWith('-') ? value.charAt(0) : ''} */}
           {count}{suffix}
         </div>
         <div className="text-lg text-[#2A2D34]/70 font-medium">{label}</div>
@@ -74,7 +74,7 @@ const StatsSection = () => {
     { icon: '📈', value: '+60', suffix: '%', label: 'Conversão', delay: 0.1 },
     { icon: '⚡', value: '15', suffix: 's', label: 'Tempo de Resposta', delay: 0.2 },
     { icon: '🎯', value: '90', suffix: '%', label: 'Leads Qualificados', delay: 0.3 },
-    { icon: '💰', value: '-40', suffix: '%', label: 'Custo por Lead', delay: 0.4 },
+    { icon: '💰', value: '-40', suffix: '%', label: 'Custo por Lead Qualificado', delay: 0.4 },
     { icon: '🌙', value: '24', suffix: '/7', label: 'Atendimento', delay: 0.5 },
   ];
 

@@ -159,7 +159,7 @@ const ConversationDemo = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={visibleMessages.length >= 6 ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5 }}
-              className="absolute -left-4 sm:-left-12 top-1/4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl hidden md:block"
+              className="absolute -left-4 sm:-left-12 top-1/4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl md:block"
             >
               <div className="text-xs sm:text-sm opacity-80 mb-1">Tempo de qualificação</div>
               <div className="text-xl sm:text-2xl font-bold">2min 34s ⚡</div>
@@ -169,7 +169,7 @@ const ConversationDemo = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={visibleMessages.length >= 6 ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="absolute -right-4 sm:-right-12 bottom-1/4 bg-gradient-to-r from-[#0E3C4E] to-[#E8B77D] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl hidden md:block"
+              className="absolute -right-4 sm:-right-12 bottom-1/4 bg-gradient-to-r from-[#0E3C4E] to-[#E8B77D] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl md:block"
             >
               <div className="text-xs sm:text-sm opacity-80 mb-1">Status</div>
               <div className="text-lg sm:text-xl font-bold">✅ Lead Qualificado</div>

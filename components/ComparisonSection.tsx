@@ -33,7 +33,7 @@ const ComparisonSection = () => {
     },
     {
       without: 'Custo alto de atendimento',
-      with: '-40% redução de custo por lead',
+      with: '-40% de custo por lead',
     },
     {
       without: 'Respostas genéricas e lentas',
@@ -148,7 +148,7 @@ const ComparisonSection = () => {
           >
             {[
               { value: '+60%', label: 'Aumento em Conversão', icon: '📈' },
-              { value: '-40%', label: 'Redução de Custos', icon: '💰' },
+              { value: '-40%', label: 'de Custos por Lead', icon: '💰' },
               { value: '90%', label: 'Leads Qualificados', icon: '🎯' },
             ].map((stat, index) => (
               <motion.div
