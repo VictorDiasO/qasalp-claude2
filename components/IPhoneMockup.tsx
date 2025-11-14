@@ -11,6 +11,12 @@ interface IPhoneMockupProps {
 }
 
 const IPhoneMockup = ({ children, className = '', innerFrameBg = 'bg-transparent', statusBarColor = 'text-white' }: IPhoneMockupProps) => {
+  // Determine battery color based on statusBarColor
+  const isBlack = statusBarColor.includes('black');
+  const batteryBorderColor = isBlack ? 'border-black/60' : 'border-white/60';
+  const batteryFillColor = isBlack ? 'bg-black' : 'bg-white';
+  const batteryCapColor = isBlack ? 'bg-black/60' : 'bg-white/60';
+
   return (
     <div className={`relative ${className}`}>
       {/* iPhone Frame */}
@@ -32,7 +38,7 @@ const IPhoneMockup = ({ children, className = '', innerFrameBg = 'bg-transparent
             </div>
 
             {/* Status bar */}
-            <div className="absolute top-0 left-0 right-0 z-40 px-6 pt-3 pb-2 flex items-center justify-between text-white text-xs font-semibold">
+            <div className={`absolute top-0 left-0 right-0 z-40 px-6 pt-3 pb-2 flex items-center justify-between ${statusBarColor} text-xs font-semibold`}>
               <div className="flex items-center gap-1">
                 <span>9:41</span>
               </div>
@@ -50,10 +56,10 @@ const IPhoneMockup = ({ children, className = '', innerFrameBg = 'bg-transparent
                 </svg>
                 {/* Battery */}
                 <div className="flex items-center gap-0.5">
-                  <div className="w-6 h-3 border border-white/60 rounded-sm relative">
-                    <div className="absolute inset-0.5 bg-white rounded-sm" />
+                  <div className={`w-6 h-3 border ${batteryBorderColor} rounded-sm relative`}>
+                    <div className={`absolute inset-0.5 ${batteryFillColor} rounded-sm`} />
                   </div>
-                  <div className="w-0.5 h-1.5 bg-white/60 rounded-r-sm" />
+                  <div className={`w-0.5 h-1.5 ${batteryCapColor} rounded-r-sm`} />
                 </div>
               </div>
             </div>
