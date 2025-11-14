@@ -50,10 +50,8 @@ const IPhoneMockup = ({ children, className = '', innerFrameBg = 'bg-transparent
                   <rect x="9" y="2" width="2.5" height="10" rx="0.5" />
                   <rect x="13.5" y="0" width="2.5" height="12" rx="0.5" />
                 </svg>
-                {/* WiFi */}
-                <svg className="w-4 h-3" fill="currentColor" viewBox="0 0 16 12">
-                  <path d="M8 12C8.828 12 9.5 11.328 9.5 10.5S8.828 9 8 9s-1.5.672-1.5 1.5S7.172 12 8 12zm3.5-3.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zM8 6c1.381 0 2.631.559 3.536 1.464l1.414-1.414C11.438 4.537 9.793 3.75 8 3.75s-3.438.787-4.95 2.3l1.414 1.414C5.369 6.559 6.619 6 8 6z"/>
-                </svg>
+                {/* 5G */}
+                <span className="text-[10px] font-semibold">5G</span>
                 {/* Battery */}
                 <div className="flex items-center gap-0.5">
                   <div className={`w-6 h-3 border ${batteryBorderColor} rounded-sm relative`}>
