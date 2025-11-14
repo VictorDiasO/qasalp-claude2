@@ -6,7 +6,7 @@ import IPhoneMockup from './IPhoneMockup';
 
 const HeroSection = () => {
   const [displayedText, setDisplayedText] = useState('');
-  const fullText = 'A IA que Vende Mais para Sua Imobiliária';
+  const fullText = 'A IA que faz a Sua Imobiliária vender mais';
   const [isTypingComplete, setIsTypingComplete] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0E3C4E] via-[#E8B77D] to-[#FF6F3C] animate-gradient">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#0E3C4E] via-[#E8B77D] to-[#FF6F3C] animate-gradient">
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0E3C4E]/80 via-transparent to-[#FF6F3C]/60" />
 
@@ -74,7 +74,7 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-[#FF6F3C] text-white font-semibold rounded-lg shadow-2xl hover:shadow-[#FF6F3C]/50 transition-all duration-300 text-lg relative overflow-hidden group"
+                className="px-8 py-4 bg-[#FF6F3C] text-white font-semibold rounded-lg shadow-2xl hover:shadow-[#FF6F3C]/50 transition-all duration-300 text-lg relative overflow-hidden group animate-border-glow"
               >
                 <span className="relative z-10">Agendar Demonstração Gratuita</span>
                 <motion.div

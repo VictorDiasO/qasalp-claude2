@@ -148,7 +148,7 @@ const ComparisonSection = () => {
           >
             {[
               { value: '+60%', label: 'Aumento em Conversão', icon: '📈' },
-              { value: '-40%', label: 'de Custos por Lead', icon: '💰' },
+              { value: '3x', label: 'mais Visitas', icon: '💰' },
               { value: '90%', label: 'Leads Qualificados', icon: '🎯' },
             ].map((stat, index) => (
               <motion.div
@@ -177,7 +177,7 @@ const ComparisonSection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white font-bold text-xl rounded-xl shadow-2xl hover:shadow-[#FF6F3C]/50 transition-all"
+              className="px-10 py-5 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white font-bold text-xl rounded-xl shadow-2xl hover:shadow-[#FF6F3C]/50 transition-all animate-border-glow"
             >
               Quero Esses Resultados Agora
             </motion.button>

@@ -190,7 +190,7 @@ const ConversationDemo = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="px-8 py-4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 animate-border-glow"
             >
               Quero Testar Agora
             </motion.button>
