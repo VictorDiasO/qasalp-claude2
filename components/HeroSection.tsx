@@ -156,17 +156,53 @@ const HeroSection = () => {
                 </AnimatedMessage>
 
                 <AnimatedMessage delay={4}>
-                  Encontrei 3 apartamentos perfeitos para você! Todos com 2 quartos na Mooca:<br/><br/>
-                  🏠 R$ 450.000 - 65m²<br/>
-                  🏠 R$ 520.000 - 72m² (Novo!)<br/>
-                  🏠 R$ 480.000 - 68m²
+                  Encontrei 3 apartamentos perfeitos para você! Todos com 2 quartos na Mooca:
                 </AnimatedMessage>
 
-                <AnimatedMessage delay={5} isUser>
-                  Gostei do segundo!
+                <AnimatedMessage delay={5}>
+                  <div className="overflow-hidden">
+                    <div className="bg-gradient-to-br from-[#FF6F3C]/10 to-[#E8B77D]/10 rounded-lg p-6 mb-2 flex items-center justify-center">
+                      <svg className="w-16 h-16 text-[#FF6F3C]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                      </svg>
+                    </div>
+                    <div className="text-sm">
+                      🏠 R$ 450.000 - 65m²
+                    </div>
+                  </div>
                 </AnimatedMessage>
 
                 <AnimatedMessage delay={6}>
+                  <div className="overflow-hidden">
+                    <div className="bg-gradient-to-br from-[#FF6F3C]/10 to-[#E8B77D]/10 rounded-lg p-6 mb-2 flex items-center justify-center">
+                      <svg className="w-16 h-16 text-[#FF6F3C]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                      </svg>
+                    </div>
+                    <div className="text-sm">
+                      🏠 R$ 520.000 - 72m² (Novo!)
+                    </div>
+                  </div>
+                </AnimatedMessage>
+
+                <AnimatedMessage delay={7}>
+                  <div className="overflow-hidden">
+                    <div className="bg-gradient-to-br from-[#FF6F3C]/10 to-[#E8B77D]/10 rounded-lg p-6 mb-2 flex items-center justify-center">
+                      <svg className="w-16 h-16 text-[#FF6F3C]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                      </svg>
+                    </div>
+                    <div className="text-sm">
+                      🏠 R$ 480.000 - 68m²
+                    </div>
+                  </div>
+                </AnimatedMessage>
+
+                <AnimatedMessage delay={8} isUser>
+                  Gostei do segundo!
+                </AnimatedMessage>
+
+                <AnimatedMessage delay={9}>
                   Excelente escolha! É um imóvel incrível. Quer agendar uma visita? Tenho horários disponíveis amanhã às 14h ou 16h 😊
                 </AnimatedMessage>
               </div>
@@ -176,7 +212,7 @@ const HeroSection = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ delay: 7, duration: 0.5 }}
+              transition={{ delay: 10, duration: 0.5 }}
               className="absolute -bottom-4 -right-4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white px-6 py-3 rounded-full font-bold shadow-xl"
             >
               Lead Qualificado em 2min 34s ⚡
@@ -227,6 +263,8 @@ const AnimatedMessage = ({ children, delay, isUser = false }: { children: React.
     return () => clearTimeout(timer);
   }, [delay]);
 
+  const isString = typeof children === 'string';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, scale: 0.8 }}
@@ -240,8 +278,13 @@ const AnimatedMessage = ({ children, delay, isUser = false }: { children: React.
             ? 'bg-[#FF6F3C] text-white rounded-br-sm'
             : 'bg-white text-[#2A2D34] rounded-bl-sm shadow-md border border-[#E8B77D]/30'
         }`}
-        dangerouslySetInnerHTML={{ __html: String(children) }}
-      />
+      >
+        {isString ? (
+          <span dangerouslySetInnerHTML={{ __html: children }} />
+        ) : (
+          children
+        )}
+      </div>
     </motion.div>
   );
 };
