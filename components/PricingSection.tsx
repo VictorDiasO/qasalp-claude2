@@ -172,7 +172,7 @@ const PricingSection = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`w-full py-4 rounded-xl font-bold text-lg transition-all duration-300 ${
                     plan.popular
-                      ? 'bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white shadow-xl hover:shadow-2xl'
+                      ? 'bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white shadow-xl hover:shadow-2xl animate-border-glow'
                       : 'bg-[#F7F4EA] text-[#0E3C4E] border-2 border-[#E8B77D] hover:bg-[#E8B77D]/20'
                   }`}
                 >

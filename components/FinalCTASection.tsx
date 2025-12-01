@@ -118,7 +118,7 @@ const FinalCTASection = () => {
                 ],
               }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="px-12 py-6 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white font-bold text-xl rounded-xl shadow-2xl relative overflow-hidden group"
+              className="px-12 py-6 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white font-bold text-xl rounded-xl shadow-2xl relative overflow-hidden group animate-border-glow"
             >
               <span className="relative z-10">🚀 Agendar Demonstração Gratuita</span>
               <motion.div

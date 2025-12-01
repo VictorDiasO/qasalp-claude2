@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import IPhoneMockup from './IPhoneMockup';
 
 interface Message {
   text: string;
@@ -69,12 +70,11 @@ const ConversationDemo = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            {/* Phone mockup */}
-            <div className="bg-[#0E3C4E] rounded-3xl shadow-2xl overflow-hidden border-8 border-[#2A2D34]">
-              {/* Phone header */}
-              <div className="bg-gradient-to-r from-[#0E3C4E] to-[#FF6F3C]/20 px-6 py-4 flex items-center gap-4">
+            <IPhoneMockup innerFrameBg="bg-gradient-to-r from-[#0E3C4E] to-[#FF6F3C]/20">
+              {/* Fixed header */}
+              <div className="sticky top-0 z-10 bg-gradient-to-r from-[#0E3C4E] to-[#FF6F3C]/20 px-6 py-4 flex items-center gap-4">
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -95,8 +95,8 @@ const ConversationDemo = () => {
                 </div>
               </div>
 
-              {/* Chat area */}
-              <div className="bg-gradient-to-b from-[#0E3C4E] to-[#0a2a36] p-6 min-h-[500px] space-y-4">
+              {/* Scrollable chat area */}
+              <div className="bg-gradient-to-b from-[#0E3C4E] to-[#0a2a36] p-6 flex-1 space-y-4 overflow-y-auto">
                 {messages.map((message, index) => (
                   <motion.div
                     key={index}
@@ -152,14 +152,14 @@ const ConversationDemo = () => {
                   </motion.div>
                 )}
               </div>
-            </div>
+            </IPhoneMockup>
 
             {/* Floating stats */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={visibleMessages.length >= 6 ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5 }}
-              className="absolute -left-4 sm:-left-12 top-1/4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl hidden md:block"
+              className="absolute -left-4 sm:-left-12 top-1/4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl md:block"
             >
               <div className="text-xs sm:text-sm opacity-80 mb-1">Tempo de qualificação</div>
               <div className="text-xl sm:text-2xl font-bold">2min 34s ⚡</div>
@@ -169,7 +169,7 @@ const ConversationDemo = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={visibleMessages.length >= 6 ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="absolute -right-4 sm:-right-12 bottom-1/4 bg-gradient-to-r from-[#0E3C4E] to-[#E8B77D] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl hidden md:block"
+              className="absolute -right-4 sm:-right-12 bottom-1/4 bg-gradient-to-r from-[#0E3C4E] to-[#E8B77D] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl md:block"
             >
               <div className="text-xs sm:text-sm opacity-80 mb-1">Status</div>
               <div className="text-lg sm:text-xl font-bold">✅ Lead Qualificado</div>
@@ -190,7 +190,7 @@ const ConversationDemo = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="px-8 py-4 bg-gradient-to-r from-[#FF6F3C] to-[#E8B77D] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 animate-border-glow"
             >
               Quero Testar Agora
             </motion.button>
